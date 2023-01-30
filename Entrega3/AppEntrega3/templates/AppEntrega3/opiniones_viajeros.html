@@ -1,0 +1,27 @@
+{% extends "AppEntrega3/padre.html" %}
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+    <!--Aquí va lo que cambia, y lo asociado a está vista :) -->
+    <h1>Opiniones de Nuestros Viajeros</h1>
+    <br><br>
+    <p>Dejanos tu Opinion asi podemos ayudarte</p>
+ 
+
+    {% if miFormulario.errors %}
+
+    <p style="color: red;"> Están mal los datos, revisar</p>
+
+    {% endif %}
+    <form action="" method="POST">  {% csrf_token %}
+      
+        <table>
+            {{ miFormulario.as_table }}
+        </table>
+
+      <input type="submit" value="Enviar" />
+    </form>
+
+ 
+{% endblock %}      

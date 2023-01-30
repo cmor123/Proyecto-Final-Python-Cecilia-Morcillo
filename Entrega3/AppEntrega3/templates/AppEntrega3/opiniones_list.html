@@ -1,0 +1,31 @@
+{% extends "AppEntrega3/padre.html" %}
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+    <h1>Opiniones Viajeros</h1>
+    <ul>
+        {% for opiniones_viajeros in object_list %}
+
+            <li>
+                <p>NOMBRE: {{ opiniones_viajeros.Nombre }} </p>
+                <p> 
+                    <a href="{% url 'Detail' opiniones_viajeros.id %}">Ver</a> | 
+                    <a href="{% url 'Edit' opiniones_viajeros.id %}">Editar</a> | 
+                    <a href="{% url 'Delete' opiniones_viajeros.id %}">Borrar</a> 
+                
+                </p> 
+            </li> 
+
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'New'  %}">Nuevo</a> 
+
+    <br>
+
+    <button>
+        <a href="../opiniones_viajeros">Volver</a>
+    </button>
+
+    {% endblock %}    

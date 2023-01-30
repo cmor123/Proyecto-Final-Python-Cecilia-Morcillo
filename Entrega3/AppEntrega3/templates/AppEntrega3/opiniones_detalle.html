@@ -1,0 +1,15 @@
+{% extends "AppEntrega3/padre.html" %}
+{% load static %}
+
+{% block contenidoQueCambia %}>
+
+   
+    <p>Nombre: <i>{{ opiniones_viajeros.Nombre }}</i></p>
+    <p>Nacionalidad: <i>{{ opiniones_viajeros.Nacionalidad }}</i></p>
+    <p>Opiniones: <i>{{opiniones_viajeros.Opiniones }}</i></p>
+    <p>
+        <a href="{% url 'List' %}">Regresar</a>
+    </p>
+
+    
+    {% endblock %}  
